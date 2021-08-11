@@ -1,3 +1,4 @@
+const {keyboardHandler} = require("./common/keyboardHandler");
 const {botAPI} = require("./constants/apiKeys");
 const { Telegraf } = require('telegraf')
 const {generateWeatherMessage} = require("./common/weatherManager");
@@ -24,6 +25,8 @@ const main = async () => {
         console.log(weatherString);
         ctx.reply(weatherString)
     })
+
+    keyboardHandler(bot);
 
     bot.launch()
 }
